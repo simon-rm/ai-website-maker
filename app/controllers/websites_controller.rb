@@ -7,6 +7,10 @@ class WebsitesController < ApplicationController
     @website = Website.find params[:id]
   end
 
+  def index
+    @websites = Website.all
+  end
+
   def create
     @website = Website.new website_params
     @website.content = get_content
